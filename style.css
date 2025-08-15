@@ -1,0 +1,248 @@
+.vertical-line {
+width: 3px;
+height: 1500px;
+background-color: #e31202;
+position: absolute;
+top: 0;
+left: 27.9%;
+z-index: -1;
+}
+
+body {
+font-family: "canada-type-gibson", sans-serif;
+font-weight: 700;
+font-style: normal;
+background-color: #faf5f0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#nav {
+position: fixed;
+z-index: 10;
+top: 2%;
+left: 50%;
+transform: translate(-50%, -0%);
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+height: 5em;
+width: 35em;
+background-color: #02e3d2;
+}
+
+#nav p{
+  margin: 2em;
+  font-size: 1.2rem;
+}
+
+
+h1 {
+position: absolute;
+font-size: 8rem;
+left: 5%;
+top: 17%;
+}
+
+.container {
+display: flex;
+height: 100vh;
+}
+
+.left {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.right {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center; /* bottom align */
+
+}
+
+.animated-text {
+position: relative;
+font-size: 5rem;
+padding-right: 4em;
+height: 1em; /* lock vertical space */
+color: #e31202;
+}
+
+.animated-text span {
+position: absolute;
+left: 0;
+right: 0;
+text-align: left;
+opacity: 0;
+animation: fadeInOut 6s infinite;
+}
+
+
+.animated-text span:nth-child(1) {
+animation-delay: 0s;
+}
+
+.animated-text span:nth-child(2) {
+animation-delay: 2s;
+}
+
+.animated-text span:nth-child(3) {
+animation-delay: 4s;
+}
+
+@keyframes fadeInOut {
+0%, 20% { opacity: 1; }
+33%, 100% { opacity: 0; }
+}
+
+
+ /* Gallery Grid */
+ .grid {
+  margin-top: 8em;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
+  padding: 2em 0;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img, .item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Elevation effect */
+.item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Full overlay on hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin: 0 0 0.5em;
+  font-size: 1.5em;
+  font-weight: 500; 
+}
+
+.overlay p {
+  line-height: 1.4em;
+  font-weight: 300; 
+  max-width: 90%;
+}
+
+.item .overlay .small-italic {
+  font-size: 0.8em;
+  margin-top: 1em;
+  font-style: italic;
+}
+
+.item.short-video {
+  background: black;      /* black background fills empty space */
+  height: 400px;          /* same as other tiles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.item.short-video video {
+  max-height: 60%;        /* shrink video further */
+  width: auto;            /* maintain aspect ratio */
+  object-fit: contain;    /* ensures it fits inside the tile */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-items: center;
+}
+
+.iframe-container {
+  width: 50vw;
+  height: 40vh; /* adjust height per iframe */
+  margin: 2em;
+}
+
+.creative-coding {
+  display: flex;
+  margin-top: 8em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  position: fixed;
+  z-index: 10;
+  bottom: 20px; /* space from bottom */
+  right: 20px;  /* space from right */
+  display: flex;
+  flex-direction: row; /* stack vertically */
+  gap: 8px; /* space between links */
+}
+
+.contact a {
+  text-decoration: none;
+  color: black; /* adjust for your background */
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.holder {
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 40px;
+}
+
+
